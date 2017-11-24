@@ -901,25 +901,26 @@ button.swiper-pagination-bullet {
 
 @include timer('.wrapper', 5, 250px, #08C, '5px solid rgba(0,0,0,0.5)');
 
-
-
-.table-row {
-  width: calc(50% - 32px);
-  height: calc(50% - 15px);
-  display: inline-block;
-  background: #616161;
-  border-radius: 2px;
-  margin-top: 5px;
-  padding-bottom: 1;
-  padding: 15px;
-}
-
 .table {
   width:80%;
   margin-left: auto;
   margin-right: auto;  
 }
 
+.table-row {
+  width: calc(50% - 32px);
+  height: calc(50% - 15px);
+  display: inline-block;
+  background: #1f481a;
+  border-radius: 2px;
+  margin-top: 5px;
+  padding-bottom: 1;
+  padding: 15px;
+}
+
+.table-row-red {
+  background: #5a0080 !important;
+}
 .table-row > h1 {
   font-size: 30px;
   padding-bottom: 10px;

@@ -902,14 +902,15 @@ button.swiper-pagination-bullet {
 @include timer('.wrapper', 5, 250px, #08C, '5px solid rgba(0,0,0,0.5)');
 
 .table {
-  width:80%;
+  width: 95%;
   margin-left: auto;
-  margin-right: auto;  
+  margin-right: auto;
+  padding: 5%;
 }
 
 .table-row {
-  width: calc(50% - 32px);
-  height: calc(50% - 15px);
+  width: 45%;
+  height: 49%;
   display: inline-block;
   background: #1f481a;
   border-radius: 2px;
@@ -931,3 +932,4 @@ button.swiper-pagination-bullet {
   padding-left: 5px;
   color: #bfbfbf;
 }
+

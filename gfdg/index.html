@@ -94,12 +94,13 @@
 	<!--//skycons-icons-->
 	<script type="text/javascript" src="https://www.google.com/uds/?file=visualization&amp;v=1&amp;packages=geochart&amp;async=2"></script><link type="text/css" href="https://www.google.com/uds/api/visualization/1.0/40ff64b1d9d6b3213524485974f36cc0/ui+fr.css" rel="stylesheet"><script type="text/javascript" src="https://www.google.com/uds/api/visualization/1.0/40ff64b1d9d6b3213524485974f36cc0/format+fr,default+fr,ui+fr,geochart+fr.I.js"></script><link href="https://ajax.googleapis.com/ajax/static/modules/gviz/1.0/core/tooltip.css" rel="stylesheet" type="text/css"><script type="text/javascript" charset="UTF-8" src="https://www.gstatic.com/charts/regioncoder/0/geocodes/countries_en.js"></script><style> .geoChart .google-visualization-tooltip { top: 63.642857142857146px !important; left: 426.40714285714284px !important; transform: scale(0.5714285714285714)} </style><style> .geoChart .google-visualization-tooltip { top: 63.642857142857146px !important; left: 238.02428571428572px !important; transform: scale(0.5714285714285714)} </style><style> .geoChart .google-visualization-tooltip { top: 0px !important; left: 0px !important; transform: scale(0.5714285714285714)} </style></head>
 	<body>	
-	<div class="page-container">	
+	<div style="overflow: scroll;" class="page-container">	
 	   <div class="left-content">
 		   <div class="mother-grid-inner">
 
 				<div class="header-main fixed">
-						<img src="images/logo.png" style="
+						<img src="images/logo.png" style
+						="
 						float: left;
 						height: 80px;
 						margin: 5px 10px;
@@ -118,7 +119,7 @@
 															<li><a href="#">
 															   <div class="user_img"><img src="images/p4.png" alt=""></div>
 															   <div class="notification_desc">
-																<p>Invitation to meeting</p>
+																<p>Your evaluations begin in 2 days</p>
 																<p><span>1 hour ago</span></p>
 																</div>
 															   <div class="clearfix"></div>	
@@ -157,7 +158,7 @@
 															<li><a href="#">
 																<div class="user_img"><img src="images/p5.png" alt=""></div>
 															   </a><div class="notification_desc"><a href="#">
-																</a><p><a href="#">Recommend you </a><a href="price.html">improve your leadership</a></p>
+																</a><p><a href="#">Recommend you </a><a href="product.html">improve your leadership</a></p></a></p>
 																<p><span>1 hour ago</span></p>
 																</div>
 															  <div class="clearfix"></div>	
@@ -165,7 +166,7 @@
 															 <li class="odd"><a href="#">
 																<div class="user_img"><img src="images/p3.png" alt=""></div>
 															   </a><div class="notification_desc"><a href="#">
-																</a><p><a href="#">Participate in </a><a href="price.html">improve your leadership</a></p>
+																</a><p><a href="#">Participate in </a><a href="product.html">improve your leadership</a></p>
 																<p><span>2 hour ago</span></p>
 																</div>
 															   <div class="clearfix"></div>	
@@ -484,6 +485,15 @@ Automatic profiling</h1>
 			</div>
 		</div><div class="clearfix"> </div>
 	</div>
+
+
+	<div style="padding: 1em" class="chart-layer-2">
+		<div style="background-color: white; box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.15); width:100%;">
+			<canvas height="70px" id="canvas"></canvas>
+		</div>
+	</div>
+
+	
 	<!--main page chit chating end here-->
 	<!--main page chart start here-->
 	
@@ -525,24 +535,32 @@ Automatic profiling</h1>
 		<div class="clearfix"> </div>
 	</div>
 	<!--slide bar menu end here-->
+	<script src="http://www.chartjs.org/dist/2.7.1/Chart.bundle.js" type="text/javascript"></script>
 	<script>
-	var toggle = true;
-				
-	$(".sidebar-icon").click(function() {                
-	  if (toggle)
+
+var ctx = document.getElementById('canvas').getContext('2d');
+var myChart = new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: ['2013', '2014', '2015', '2016', '2017', '2018', '2019'],
+    datasets: [{
+		label: 'Offer',
+		data: [10, 12, 14, 10, 17, 18, 18],
+		backgroundColor: "rgba(255,0,0,0.4)"
+	  },
 	  {
-		$(".page-container").addClass("sidebar-collapsed").removeClass("sidebar-collapsed-back");
-		$("#menu span").css({"position":"absolute"});
-	  }
-	  else
+		label: 'Request',
+		data: [30, 22, 22, 17, 15, 14, 10],
+		backgroundColor: "rgba(255,216,0,0.4)"
+	  },
 	  {
-		$(".page-container").removeClass("sidebar-collapsed").addClass("sidebar-collapsed-back");
-		setTimeout(function() {
-		  $("#menu span").css({"position":"relative"});
-		}, 400);
-	  }               
-					toggle = !toggle;
-				});
+      label: 'Capital gain',
+      data: [30, 29, 28, 25, 20, 18, 18],
+      backgroundColor: "rgba(153,255,51,0.4)"
+    }]
+  }
+});			
+
 	</script>
 	<!--scrolling js-->
 			<script src="js/jquery.nicescroll.js"></script>
